@@ -1,0 +1,27 @@
+<template>
+  <fast-design-system-provider use-defaults>
+    <fast-card>
+      <h2>${heading}</h2>
+
+      <form submit.trigger="addTodo()">
+        <fast-text-field appearance="accent" width="200px" value.two-way="todoDescription"></fast-text-field>
+        <fast-button type="submit" appearance="accent" disabled.bind="!todoDescription" click.trigger="submit">
+          Add Todo</fast-button>
+      </form>
+
+      <fieldset>
+        <legend>Todos</legend>
+        <ul>
+          <li repeat.for="todo of todos">
+            <fast-checkbox type="checkbox" checked.two-way="todo.done"></fast-checkbox>
+            <span css="text-decoration: ${todo.done ? 'line-through' : 'none' } ">
+              ${todo.description}
+            </span>
+            <fast-button appearance="outline" click.trigger="removeTodo(todo)">Remove</button>
+          </li>
+        </ul>
+      </fieldset>
+
+    </fast-card>
+  </fast-design-system-provider>
+</template>
