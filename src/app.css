@@ -4,9 +4,13 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: #303030;
 }
 
+a {
+  color: black;
+}
 fast-design-system-provider {
   display: inline-block;
 }
